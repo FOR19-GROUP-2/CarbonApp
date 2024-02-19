@@ -22,5 +22,13 @@ def contact():
 def about_us():
   return render_template('about_us.html', title='about_us')
 
+@application.route('/login')
+def login():
+  return render_template('login.html', title='login')
+
+@application.route('/register')
+def register():
+  return render_template('register.html', title='register')
+
 if __name__=='__main__':
   application.run(debug=True)  

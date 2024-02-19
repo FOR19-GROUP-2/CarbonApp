@@ -14,7 +14,7 @@ body {
 }
 a{
   text-decoration: none;
-  color: #fff;
+  color: rgb(0,175,102);
   font-size: 1rem;
 }
 .container {
@@ -38,7 +38,10 @@ img {
 }
 /* Navbar  */
 .section_navbar {
-  background-color:#3F7E44;
+  background-color:#fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 .navbar {
   display: flex;
@@ -49,15 +52,15 @@ img {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #3F7E44;
+  background-color: #fff;
   padding: 0 0px;
   justify-content: space-between;
 }
-.navbar a {
-  color: #fff;
+
+.navbar a{
   padding: 10px 20px;
   margin: 0 5px;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
 }
 
@@ -71,7 +74,7 @@ img {
   font-weight: bold;
 }
 .text-logo {
-    color:#d1f1db;
+    color:rgb(0,175,102);
     font-size: 36px;
 }
 .navbar .logo a.logo-link, 
@@ -81,10 +84,41 @@ img {
   text-decoration: none;
 }
 
-/* NEW STUFF */
+/* Navbar auth links */
+.auth-links-navbar {
+  display: flex;
+  flex-direction: column; /* Stack links on top of each other */
+  align-items: center; /* Center align the links */
+  margin-left: 10px; /* Add some left margin for spacing */
+}
+
+.auth-links-navbar .auth-link {
+  margin: 5px 0; /* Add some vertical spacing between the links */
+}
+
+/* Dropdown Menu auth links */
+.dropdown_menu .auth-links-dropdown {
+  display: flex;
+  justify-content: center; /* Center the links horizontally in the dropdown */
+}
+
+.dropdown_menu .auth-links-dropdown a {
+  margin: 0 10px; /* Add some horizontal spacing between the links */
+}
+
+/* Adjusted styles for auth links to match the navbar links */
+.auth-links-navbar .auth-link {
+  font-size: 12px; /* Match the font size of other navbar links */
+  padding: 0px 20px; /* Match the padding of other navbar links */
+  margin: 0 5px; /* Adjust margin to match other navbar links */
+  text-decoration: none; /* Ensure consistency in text decoration */
+}
+
+
+/* HEADER ACTIONBTN */
 
 a:hover{
-  color: #d1f1db;
+  color: rgb(105,156,198);
 }
 
 /* Header */
@@ -95,7 +129,7 @@ a:hover{
   display: none;
 }
 
-.action_btn{
+.navbar_actionbtn{
  background-color: #56C02B;
  color: #fff; 
  padding: 0.5rem 1rem;
@@ -107,12 +141,10 @@ a:hover{
  cursor: pointer;
 }
 
-.action_btn:hover{
+.navbar_actionbtn:hover{
   transform: scale(1.05);
-}
-
-.action_btn:active{
-  transform: scale(0.95);
+  background-color: rgb(105,156,198);
+  color: #fff;
 }
 
 /* Dropdown Menu */
@@ -132,7 +164,7 @@ a:hover{
 }
 
 .dropdown_menu.open{
-  height: 240px;
+  height: 300px;
 }
 
 .dropdown_menu li{
@@ -148,9 +180,14 @@ a:hover{
   justify-content: center;
 }
 
+.toggle_btn i {
+  color: rgb(0,175,102); 
+}
+
 /* Responsive Design */
 @media(max-width:992px){
   .navbar .links,
+  .navbar .auth-link,
   .navbar .action_btn {
       display: none;
   }
@@ -220,23 +257,23 @@ a:hover{
   }
   
   .footer__link--items > h2 {
-    color: rgb(0,175,102); /* 60% */
+    color: rgb(0,175,102); 
   }
   
   .footer__link--items a {
-    color: rgb(0,175,102); /* 60% */
+    color: rgb(0,175,102); 
     text-decoration: none;
     margin-bottom: 0.5rem;
   }
   
   .footer__link--items a:hover {
-    color: rgb(105,156,198); /* 10% */
+    color: rgb(105,156,198); 
     transition: 0.3s ease-out;
   }
   
   /* Social Icons */
   social__icon--link {
-    color: rgb(0,175,102); /* 60% */
+    color: rgb(0,175,102); 
     font-size: 24px;
   }
   
@@ -262,7 +299,7 @@ a:hover{
   }
   
   .social__icons--link {
-    color: rgb(0,175,102); /* 60% */
+    color: rgb(0,175,102); 
     justify-self: flex-start;
     margin-left:  20px;
     cursor: pointer;
@@ -274,13 +311,13 @@ a:hover{
   }
   
   .social__icons--link:hover {
-    color: rgb(105,156,198); /* 10% */
+    color: rgb(105,156,198); 
   }
   
   .footer__button {
     background: none;
     border: none;
-    color: rgb(0,175,102); /* 60% */
+    color: rgb(0,175,102); 
     text-decoration: none;
     margin-bottom: 0.5rem;
     cursor: pointer;
@@ -295,7 +332,6 @@ a:hover{
     color: rgb(105,156,198); /* 10% */
     background-color: rgb(255,255,255);
   }
-  
   
   @media screen and (max-width: 820px) {
   

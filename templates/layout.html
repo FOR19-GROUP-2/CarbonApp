@@ -44,16 +44,21 @@
                     </h1>                    
                     <nav>
                         <ul>
-                            <li>
+                            <li class="navbar_item">
                                 <a href="{{ url_for('about_us') }}" class="links">About us</a>
                                 <a href="{{ url_for('contact') }}" class="links">Contact</a>
                                 <a href="{{ url_for('methodology') }}" class="links">Methodology</a>
                             </li>
-                            <li>
-                                <a href="{{ url_for('carbon_app') }}" class="action_btn">Try Our App</a>
-                                <div class="toggle_btn">
-                                  <i class="fa-solid fa-bars"></i>
-                            </li>
+                            <li class="auth-links-navbar">
+                              <a href="{{ url_for('login') }}" class="auth-link">Login</a>
+                              <a href="{{ url_for('register') }}" class="auth-link">Register</a>
+                          </li>
+                            <li class="navbar_item">
+                              <a href="{{ url_for('carbon_app') }}" class="action_btn navbar_actionbtn">Try Our App</a>
+                              <div class="toggle_btn">
+                                <i class="fa-solid fa-bars"></i>
+                              </div>
+                          </li>
                         </ul>
                     </nav>
                 </div>
@@ -63,11 +68,14 @@
                 <li><a href="{{ url_for('about_us') }}">About us</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
                 <li><a href="{{ url_for('methodology') }}">Methodology</a></li>
+                <li class="auth-links-dropdown">
+                  <a href="{{ url_for('login') }}">Login</a>
+                  <a href="{{ url_for('register') }}">Register</a>
+                </li>
                 <li> 
-                  <a href="{{ url_for('carbon_app') }}" class="action_btn">Try Our App</a>
+                  <a href="{{ url_for('carbon_app') }}" class="action_btn navbar_actionbtn">Try Our App</a>
                 </li>
               </div>
-            </header>
         </section>
 
         <script>
@@ -92,19 +100,17 @@
   <div class="footer__links">
       <div class="footer__link--wrapper">
           <div class="footer__link--items">
-              <h2>Om Oss</h2>
-              <a href="/"> Hjem </a>
-              <a href="mailto:NIKT@eksempel.no"> Kontakt </a>
+              <h2>CarbonTracker</h2>
+              <a href="/"> Home </a>
+              <a href="mailto:CarbonApp@group.com"> Contact </a>
               <a href="/termsofservice"> Terms of Service </a>
-              <!-- Admin button added here -->
-              <button id="adminAccessBtn" class="footer__button">Admin</button>
           </div>
       </div>
   </div> 
   <div class="social__media">
       <div class="social__media--wrap">
           <div class="footer__logo">
-              <a href="/" id="footer__logo"><img src="media/NhhKT_FN.png"></a>
+              <a href="/" id="footer__logo"><img src="Our logo here"></a>
           </div>
           <div class="social__icons">
               <a href="//facebook.com" class="social__icons--link" target="_blank">
