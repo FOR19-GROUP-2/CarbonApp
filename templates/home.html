@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+        <h1 style="font-size:55px;"><span class="text-logo"> Home</span></h1>
+        <p style="text-align:left;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Possimus suscipit sapiente non ea excepturi odio quis saepe, 
+          dignissimos deleniti libero esse vel doloremque? Voluptas.
+        </p>
+        <div class="container_buttons_header_home">
+          <div class="btn">
+              <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#0A97D9;">Register</a>
+          </div>
+          <div class="btn">
+              <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#0A97D9;">Login</a>
+          </div>
+        </div>  
+      </div>
+      <div class="box">
+        <img 
+          src="{{url_for('static', filename='icons/femtech.svg')}}"
+          width="325" 
+          height="325"
+          alt=""/>
+      </div>
+    </div>
+  </div>
+</section> 
+
+{% endblock content %}
