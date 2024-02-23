@@ -38,23 +38,23 @@
             <div class="container">
                 <div class="navbar">
                     <h1 class="logo">
-                        <a href="{{ url_for('home') }}" class='logo-link'>
+                        <a href="{{ url_for('home.home_home') }}" class='logo-link'>
                         <span class="text-logo"><i class="fa-solid fa-leaf"></i>CarbonTracker</span>
                         </a>
                     </h1>                    
                     <nav>
                         <ul>
                             <li class="navbar_item">
-                                <a href="{{ url_for('about_us') }}" class="links">About us</a>
-                                <a href="{{ url_for('contact') }}" class="links">Contact</a>
-                                <a href="{{ url_for('methodology') }}" class="links">Methodology</a>
+                                <a href="{{ url_for('about_us.about_us_home') }}" class="links">About us</a>
+                                <a href="{{ url_for('contact.contact_home') }}" class="links">Contact</a>
+                                <a href="{{ url_for('methodology.methodology_home') }}" class="links">Methodology</a>
                             </li>
                             <li class="auth-links-navbar">
-                              <a href="{{ url_for('login') }}" class="auth-link">Login</a>
-                              <a href="{{ url_for('register') }}" class="auth-link">Register</a>
+                              <a href="{{ url_for('login.login_home') }}" class="auth-link">Login</a>
+                              <a href="{{ url_for('register.register_home') }}" class="auth-link">Register</a>
                           </li>
                             <li class="navbar_item">
-                              <a href="{{ url_for('carbon_app') }}" class="action_btn navbar_actionbtn">Try Our App</a>
+                              <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="action_btn navbar_actionbtn">Try Our App</a>
                               <div class="toggle_btn">
                                 <i class="fa-solid fa-bars"></i>
                               </div>
@@ -64,16 +64,16 @@
                 </div>
             </div>
             <div class="dropdown_menu">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('about_us') }}">About us</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                <li><a href="{{ url_for('methodology') }}">Methodology</a></li>
+                <li><a href="{{ url_for('home.home_home') }}">Home</a></li>
+                <li><a href="{{ url_for('about_us.about_us_home') }}">About us</a></li>
+                <li><a href="{{ url_for('contact.contact_home') }}">Contact</a></li>
+                <li><a href="{{ url_for('methodology.methodology_home') }}">Methodology</a></li>
                 <li class="auth-links-dropdown">
-                  <a href="{{ url_for('login') }}">Login</a>
-                  <a href="{{ url_for('register') }}">Register</a>
+                  <a href="{{ url_for('login.login_home') }}">Login</a>
+                  <a href="{{ url_for('register.register_home') }}">Register</a>
                 </li>
                 <li> 
-                  <a href="{{ url_for('carbon_app') }}" class="action_btn navbar_actionbtn">Try Our App</a>
+                  <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="action_btn navbar_actionbtn">Try Our App</a>
                 </li>
               </div>
         </section>
