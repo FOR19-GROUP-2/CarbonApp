@@ -9,7 +9,7 @@
       <div class="box"> 
         <h1 style="font-size:55px;"><span class="text-logo">Home</span></h1>
         <p style="text-align:left;">
-          Welcome to GreenJourney, your go-to app for identifying and mitigating carbon emissions for both individuals and organizations. 
+          Welcome to Carbon Tracker, your go-to app for identifying and mitigating carbon emissions for both individuals and organizations. 
           Our app is crafted to assist you in pinpointing the primary contributors
           to your carbon footprint and guiding you towards meaningful actions to minimize your environmental impact.
         </p>
@@ -38,15 +38,53 @@
 </div>
 
 <!-- Insert rest here with blue background-->
-<!-- Our mission section-->
-
+<section class="section-mid"> 
+  <div class="section-mid-info">
+    <div class="container">
+      <div class="box-section-mid">
+        <h2>Our mission</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius rem odit laudantium est aperiam asperiores quod maxime placeat distinctio fuga fugit, corporis nam nemo, necessitatibus nihil dolorem ab voluptates ad!
+        </p>
+      </div>
+      <div class="counter">
+        <iframe 
+        src="https://climatecounters.sky.com/total-emissions" 
+        frameborder="0"
+        scrolling="no"
+        width="1600" 
+        height="265"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 <div class="wave">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path fill="#699cc6" fill-opacity="1" d="M0,96L24,85.3C48,75,96,53,144,80C192,107,240,181,288,213.3C336,245,384,235,432,234.7C480,235,528,245,576,218.7C624,192,672,128,720,101.3C768,75,816,85,864,101.3C912,117,960,139,1008,122.7C1056,107,1104,53,1152,42.7C1200,32,1248,64,1296,80C1344,96,1392,96,1416,96L1440,96L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
   </svg>
   </div>
 
-  <!-- Events section-->
+  <!-- Contact and Mao, not sure if we should add this-->
 
-  <!-- Where to find us-->
+  <section class="section-contact-map"> 
+    <div class="contact-map-container">
+      <div class="contact-info">
+        <h2>Adress</h2>
+        <p>NHH Norwegian School of Economics: Helleveien 30, 5045 Bergen</p>
+        <p></p>
+        <h2>Call us</h2>
+        <p>+47 123 45 678</p>
+        <p></p>
+        <h2>Write to us</h2>
+        <p>info@greenjourney.com</p>
+        <a href="{{ url_for('contact.contact_home') }}" class="contact-button">Contact us</a>
+      </div>
+      <div class="map">
+        <!-- Replace the src with the actual map embed link -->
+        <iframe src="https://maps.google.com/maps?q=Bergen&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+    </div>
+  </section>
+  
 {% endblock content %}
