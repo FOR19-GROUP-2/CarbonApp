@@ -1,3 +1,8 @@
+/* Colors */
+/* Darkgreen = 13. Climate Action = #3F7E44*/
+/* Lime green = 15. Life on Land = #56C02B */
+/* UN Logo Blue =  #009EDB */
+
 /* Google fonts Roboto  */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
@@ -14,7 +19,7 @@ body {
 }
 a{
   text-decoration: none;
-  color: rgb(0,175,102);
+  color: #3F7E44;
   font-size: 1rem;
 }
 .container {
@@ -74,7 +79,7 @@ img {
   font-weight: bold;
 }
 .text-logo {
-    color:rgb(0,175,102);
+    color:#3F7E44;
     font-size: 36px;
 }
 .navbar .logo a.logo-link, 
@@ -87,38 +92,38 @@ img {
 /* Navbar auth links */
 .auth-links-navbar {
   display: flex;
-  flex-direction: column; /* Stack links on top of each other */
-  align-items: center; /* Center align the links */
-  margin-left: 10px; /* Add some left margin for spacing */
+  flex-direction: column; 
+  align-items: center; 
+  margin-left: 10px; 
 }
 
 .auth-links-navbar .auth-link {
-  margin: 5px 0; /* Add some vertical spacing between the links */
+  margin: 5px 0; 
 }
 
 /* Dropdown Menu auth links */
 .dropdown_menu .auth-links-dropdown {
   display: flex;
-  justify-content: center; /* Center the links horizontally in the dropdown */
+  justify-content: center; 
 }
 
 .dropdown_menu .auth-links-dropdown a {
-  margin: 0 10px; /* Add some horizontal spacing between the links */
+  margin: 0 10px; 
 }
 
 /* Adjusted styles for auth links to match the navbar links */
 .auth-links-navbar .auth-link {
-  font-size: 12px; /* Match the font size of other navbar links */
-  padding: 0px 20px; /* Match the padding of other navbar links */
-  margin: 0 5px; /* Adjust margin to match other navbar links */
-  text-decoration: none; /* Ensure consistency in text decoration */
+  font-size: 12px; 
+  padding: 0px 20px; 
+  margin: 0 5px; 
+  text-decoration: none; 
 }
 
 
 /* HEADER ACTIONBTN */
 
 a:hover{
-  color: rgb(105,156,198);
+  color: #009EDB;
 }
 
 /* Header */
@@ -142,8 +147,7 @@ a:hover{
 }
 
 .navbar_actionbtn:hover{
-  transform: scale(1.05);
-  background-color: rgb(105,156,198);
+  background-color: #009EDB;
   color: #fff;
 }
 
@@ -181,7 +185,7 @@ a:hover{
 }
 
 .toggle_btn i {
-  color: rgb(0,175,102); 
+  color: #56C02B; 
 }
 
 /* Responsive Design */
@@ -205,7 +209,7 @@ a:hover{
   
   .footer__container {
   
-    background-color: rgb(255,255,255); /* 60% */
+    background-color: #fff;
     padding: 5rem 0;
     display: flex;
     flex-direction: column;
@@ -214,7 +218,7 @@ a:hover{
   }
   
   #footer__logo {
-    color: rgb(0,175,102); /* 60% */
+    color: #3F7E44; 
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -257,23 +261,23 @@ a:hover{
   }
   
   .footer__link--items > h2 {
-    color: rgb(0,175,102); 
+    color: #3F7E44; 
   }
   
   .footer__link--items a {
-    color: rgb(0,175,102); 
+    color: #3F7E44; 
     text-decoration: none;
     margin-bottom: 0.5rem;
   }
   
   .footer__link--items a:hover {
-    color: rgb(105,156,198); 
+    color: #009EDB; 
     transition: 0.3s ease-out;
   }
   
   /* Social Icons */
   social__icon--link {
-    color: rgb(0,175,102); 
+    color: #3F7E44; 
     font-size: 24px;
   }
   
@@ -299,7 +303,7 @@ a:hover{
   }
   
   .social__icons--link {
-    color: rgb(0,175,102); 
+    color: #3F7E44; 
     justify-self: flex-start;
     margin-left:  20px;
     cursor: pointer;
@@ -311,13 +315,13 @@ a:hover{
   }
   
   .social__icons--link:hover {
-    color: rgb(105,156,198); 
+    color: #009EDB; 
   }
   
   .footer__button {
     background: none;
     border: none;
-    color: rgb(0,175,102); 
+    color: #3F7E44; 
     text-decoration: none;
     margin-bottom: 0.5rem;
     cursor: pointer;
@@ -329,8 +333,8 @@ a:hover{
   }
   
   .footer__button:hover {
-    color: rgb(105,156,198); /* 10% */
-    background-color: rgb(255,255,255);
+    color: #009EDB;
+    background-color: #fff;
   }
   
   @media screen and (max-width: 820px) {

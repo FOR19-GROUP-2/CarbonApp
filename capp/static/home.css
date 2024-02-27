@@ -1,3 +1,8 @@
+/* Colors */
+/* Darkgreen = 13. Climate Action = #3F7E44*/
+/* Lime green = 15. Life on Land = #56C02B */
+/* UN Logo Blue =  #009EDB */
+
 /* Utilities  */
 p {
   margin: 10px 0;
@@ -5,13 +10,15 @@ p {
 }
 /* Section header_home */
 .section_header_home {
-  background-color:#fff;
+  background-color: #fff;
 }
+
 .header_home {
-  display: flex;  
+  display: flex;
   align-items: start;
   background: #fff;
 }
+
 .header_home .box {
   flex: 1;
   background: #fff;
@@ -19,38 +26,49 @@ p {
   border-radius: 10px;
   margin: 20px 10px;
   padding: 15px 20px;
-  text-align:center;
+  text-align: center;
   align-items: center;
   justify-content: center;
 }
+
 .header_home .box:nth-of-type(1) {
-  flex-grow:2;
+  flex-grow: 2;
 }
+
 .header_home .box:nth-of-type(2) {
-  flex-grow:1;
+  flex-grow: 1;
 }
+
 .container_buttons_header_home {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-.container_buttons_header_home a:hover {
-  color: #9fa7bf;
+
+.container_buttons_header_home .btn {
+  margin: 5px;
 }
-.container_buttons_header_home btn {
-  width: 100px;
-  height: 100px;
-  background: #9fa7bf;
+
+.container_buttons_header_home .btn .btn-link {
+  background-color: #56C02B;
   color: #fff;
-  display: flex;
-  justify-content:center;
-  align-items:center;
+  display: block; 
+  text-decoration: none; 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  text-align: center; 
+  width: 100%; 
+}
+
+.container_buttons_header_home .btn .btn-link:hover {
+  background-color: #009EDB;
+  color: #fff;
 }
 
 /* Section Middel */
 .section-mid {
-  background-color: #699cc6;
+  background-color: #009EDB; 
   color: #fff;
   padding: 20px 0; 
 }
@@ -110,12 +128,16 @@ line-height: 1.6;
 display: inline-block;
 margin-top: 30px;
 padding: 15px 30px;
-background-color: rgb(0,175,102);
+background-color: #56C02B;
 color: white;
 text-decoration: none;
-border-radius: 4px;
+border-radius: 10px;
 font-weight: bold;
 text-transform: uppercase;
+}
+
+.contact-info .contact-button:hover{
+  background-color: #009EDB;
 }
 
 .map {
