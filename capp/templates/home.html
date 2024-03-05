@@ -6,7 +6,7 @@
   <div class="container">
     <div class="header_home">
       <div class="box">
-        <h1 style="font-size:55px;"><span class="text-logo">Home</span></h1>
+        <h1 style="font-size:55px;"><span class="text-logo">Let's make an impact together</span></h1>
         <p style="text-align:left;">
           Welcome to GreenJourney, your go-to app for identifying and mitigating carbon emissions for both individuals and organizations. 
           Our app is crafted to assist you in pinpointing the primary contributors
@@ -39,7 +39,8 @@
       <div class="box-section-mid">
         <h2>Our mission</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius rem odit laudantium est aperiam asperiores quod maxime placeat distinctio fuga fugit, corporis nam nemo, necessitatibus nihil dolorem ab voluptates ad!
+          At the heart of our initiative lies a commitment to dramatically reduce carbon emissions from travel, driving a shift towards sustainability in our daily lives. 
+          Our mission is to pave the way to a zero-emission future by 2050, guided by the ambitious principles of the United Nations Sustainable Development Goals.
         </p>
       </div>
       <div class="counter">
@@ -50,6 +51,20 @@
         width="1600" 
         height="265"></iframe>
       </div>
+      <div class="box-section-mid">
+        <h3>Make an impact</h3>
+        <p>
+          We at GreenJourney extend an invitation to explore the tangible impacts of altering your travel habits.
+           Through actionable insights and sustainable alternatives, we empower you to reduce your carbon footprint and contribute to a global movement towards a healthier planet.
+        </p>
+        <div class="btn">
+              <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn-impact">See what kind of impact you can make by changing your travel habits</a>
+          </div>
+          <p>
+            Embark on this green journey with us. Your choices have power—collectively, we can enact real change and chart a course towards a sustainable future for all.
+          </p>
+      </div>
+    </div>
     </div>
   </div>
 </section>
@@ -65,13 +80,13 @@
   <section class="section-contact-map"> 
     <div class="contact-map-container">
       <div class="contact-info">
-        <h2>Address</h2>
+        <h2 class= "title-contact">Address</h2>
         <p>NHH Norwegian School of Economics: Helleveien 30, 5045 Bergen</p>
         <p></p>
-        <h2>Call us</h2>
+        <h2 class= "title-contact">Call us</h2>
         <p>+47 123 45 678</p>
         <p></p>
-        <h2>Write to us</h2>
+        <h2 class= "title-contact">Write to us</h2>
         <p>info@greenjourney.com</p>
         <a href="{{ url_for('contact.contact_home') }}" class="contact-button">Contact us</a>
       </div>

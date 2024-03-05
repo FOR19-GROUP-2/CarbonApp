@@ -272,7 +272,6 @@ a:hover{
   
   .footer__link--items a:hover {
     color: #009EDB; 
-    transition: 0.3s ease-out;
   }
   
   /* Social Icons */
@@ -329,7 +328,6 @@ a:hover{
     font-size: 1rem;
     font-family: inherit;
     display: inline;
-    transition: 0.3s ease-out;
   }
   
   .footer__button:hover {
