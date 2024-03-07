@@ -1,106 +1,90 @@
 /* Colors */
-/* Darkgreen = 13. Climate Action = #3F7E44*/
+/* Darkgreen = 13. Climate Action = #3F7E44 */
 /* Lime green = 15. Life on Land = #56C02B */
 /* UN Logo Blue =  #009EDB */
 
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif; /* Consider a more unique font if matching a specific style */
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Light background to keep things clean and modern */
+}
+
 /* Section developers */
 .section_developers {
-    background-color:white;
+    background-color: white;
+    padding: 50px 20px; /* Added padding for spacing */
 }
+
 .developers {
-    display: flex;  
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    justify-content: center; /* Center boxes */
     align-items: start;
     background: white;
     margin-bottom: 20px;
-    margin-top: 50px;
-    
 }
 
-.developers .box {
-    flex: 1;
+.developers .box, .developers .box2 {
+    flex: 0 1 300px; /* Adjust size but allow shrinking */
     background: #f1f4f7;
-    color: green;
+    color: #3F7E44; /* Dark green for text */
     border-radius: 10px;
-    margin: 20px 10px;
-    padding: 15px 20px;
-    text-align:center;
-    align-items: center;
-    justify-content: center;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out content */
 }
-.developers .box:nth-of-type(1) {
-    flex-grow:4;
+
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    align-self: center; /* Center images */
+    margin-bottom: 20px;
 }
-.developers .box:nth-of-type(2) {
-    flex-grow:4;
+
+h3 {
+    color: #009EDB; /* UN Logo Blue for headings */
+    margin: 20px 0 10px;
 }
-.developers .box:nth-of-type(3) {
-    flex-grow:4;
-}
-.developers .box:nth-of-type(4) {
-    flex-grow:4;
-}
-.developers .box2 {
-    flex: 1;
-    background: #f1f4f7;
-    color: green;
-    border-radius: 10px;
-    margin: 20px 10px;
-    padding: 15px 20px;
-    text-align:center;
-    align-items: center;
-    justify-content: center;
-}
-.developers .box2:nth-of-type(1) {
-    flex-grow:4;
-}
-.developers .box2:nth-of-type(2) {
-    flex-grow:4;
-}
-.developers .box2:nth-of-type(3) {
-    flex-grow:4;
-    background: #f1f4f7;
-}
-.developers .box2:nth-of-type(4) {
-    flex-grow:4;
-    background: #f1f4f7;
+
+p {
+    font-size: 16px; /* Adjust font size for readability */
 }
 
 .container_buttons_developers {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap:wrap;
-    padding: 0px 0px;
-    margin: 0px 0px;
+    flex-wrap: wrap;
 }
+
 .btn_developers {
-    padding: 10px 10px;
-    margin: 10px 10px 10px 10px;
+    padding: 10px 20px;
+    margin: 10px;
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
     font-size: 18px;
-    background-color: green;
-    border: 2px solid  #c5c8d9;
+    background-color: #3F7E44; /* Dark green */
+    border: none; /* Remove border for a cleaner look */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
+
 .btn_developers:hover {
-    color: green;
-    background-color: #c5c8d9;
-    border: 2px solid #c5c8d9;
-    text-decoration: none;
+    color: #3F7E44; /* Dark green */
+    background-color: #c5c8d9; /* Lighter background on hover */
 }
-  
-  
-@media (max-width:768px) { 
-    .header_home {
-      flex-direction: column;
-    } 
+
+@media (max-width: 768px) {
     .developers {
-      flex-direction: column;
-    } 
+        flex-direction: column;
+    }
     .container_buttons_developers {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
     }
 }
