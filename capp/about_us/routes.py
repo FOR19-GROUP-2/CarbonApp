@@ -1,5 +1,5 @@
 from flask import render_template
-from CarbonApp import app  ## dette er nok FEIL
+from CarbonApp import app  
 
 @app.route('/about_us')
 def about_us():
