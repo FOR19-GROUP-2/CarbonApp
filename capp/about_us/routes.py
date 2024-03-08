@@ -1,5 +1,5 @@
 from flask import render_template
-from CarbonApp import app  
+from application.py import app
 
 @app.route('/about_us')
 def about_us():
@@ -8,7 +8,7 @@ def about_us():
         {"name": "Elsa", "role": "Developer", "bio": "Bio."},
         {"name": "Julen Gago", "role": "Developer", "bio": "Bio."},
         {"name": "Emelie Nyström", "role": "Developer", "bio": "Bio."},
-        {"name": "Sondre Bøygard", "role": "Developer", "bio": "Bio."},
+        {"name": "Sondre Bøygard", "role": "Developer", "bio": Bio."},
         {"name": "Fredrik Sælemyr", "role": "Developer", "bio": "Bio."},
         {"name": "Alexander Kjellevold", "role": "Developer", "bio": "Bio."}
     ]
