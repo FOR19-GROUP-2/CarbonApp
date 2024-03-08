@@ -9,7 +9,7 @@ from capp.models import Transport
 from capp import db
 from datetime import timedelta, datetime
 from flask_login import login_required, current_user
-from capp.carbon_app.forms import BusForm, CarForm, FerryForm,trainForm, MotorbikeForm, BicycleForm, WalkForm, CarFormSUV, Domestic_FlightForm, Long_haul_FlightForm, long_distance_busForm, tramForm
+from capp.carbon_app.forms import BusForm, CarForm, FerryForm,trainForm, BicycleForm, WalkForm, CarFormSUV, Domestic_FlightForm, Long_haul_FlightForm, long_distance_busForm, tramForm
 
 carbon_app=Blueprint('carbon_app',__name__)
 
