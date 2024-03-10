@@ -1,96 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-  {% extends "layout.html" %}
-  {% block content %}
-
-<title>Contact Form</title>
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
-  .contact-container {
-    display: flex;
-    height: 100%;
-  }
-  .left-side {
-  background-image: url('desktop/App/static/images/SUI.jpeg');
-  background-size: cover;
-  background-position: center;
-  flex: 1;
-}
-
-  .right-side {
-    background: #fff;
-    flex: 1;
-    padding: 50px;
-    box-sizing: border-box;
-  }
-  .contact-title {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  .contact-info {
-    margin-bottom: 20px;
-  }
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  .send-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-  }
-</style>
-</head>
-<body>
-
-<div class="contact-container">
-  <div class="left-side">
-    <!-- Background image is set via CSS -->
-  </div>
-  <div class="right-side">
-    <h1 class="contact-title">Contact us!</h1>
-    <div class="contact-info">
-      <p>Here you can reach out to us.</p>
-      <p><strong>Adress</strong><br>NHH</p>
-      <p><strong>Phone</strong><br>+47 111 222 33</p>
-      <p><strong>Email</strong><br>info@CarbonApp.com</p>
+{% extends "layout.html" %}
+{% block content %}
+<section class="contact-section">
+    <div class="contact-container">
+        <h1>Contact us!</h1>
+        <p>Here you can contact us if you have questions or feedback.</p>
+        <div class="contact-info">
+            <div class="info">
+                <h2>Address</h2>
+                <p>Helleveien 30, 5045 Bergen</p>
+            </div>
+            <div class="info">
+                <h2>Phone</h2>
+                <p>+47 123 45 678</p>
+            </div>
+            <div class="info">
+                <h2>Email</h2>
+                <p>info@greenjourney.com</p>
+            </div>
+        </div>
+        <form class="contact-form">
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+            <button type="submit">SEND</button>
+        </form>
     </div>
-    <form>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email">
-      <label for="message">Write your messsage here...</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-      <button type="submit" class="send-button">SEND</button>
-    </form>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-
-
-  {% endblock content %}
-</body>
-</html>
+</section>
+{% endblock content %}

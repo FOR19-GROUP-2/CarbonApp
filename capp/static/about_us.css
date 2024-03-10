@@ -1,7 +1,14 @@
+/* Colors */
+/* Darkgreen = 13. Climate Action = #3F7E44*/
+/* Lime green = 15. Life on Land = #56C02B */
+/* UN Logo Blue =  #009EDB */
+
 /* Our Vision */
 .our-vision {
-    background: #004b23; /* Dark green background, adjust the color as needed */
-    color: white; /* White text */
+    background: #3F7E44; /* Dark green background, adjust the color as needed */
+    background-image: url('/static/images/nature2.jpg');
+    background-size: cover;
+    color: #fff; /* White text */
     padding: 150px 0; /* Add padding for spacing */
     text-align: center; /* Center align the text */
   }
@@ -52,8 +59,7 @@
   
   /* Hover effect for boxes */
   .box:hover {
-      transform: scale(1.45);
-      cursor: pointer;
+      transform: scale(1.05);
   }
   
   .box img {
@@ -92,6 +98,7 @@
       border-radius: 4px;
       font-size: 0.9em;
       align-self: center;
+      cursor: pointer;
   }
   
   /* LinkedIn Icon */
@@ -105,6 +112,9 @@
   }
   
   @media (max-width: 1024px) {
+      .our-vision {
+     text-align: center;
+      }
       .developers {
         justify-content: space-between;
       }
