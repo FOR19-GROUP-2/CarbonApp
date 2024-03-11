@@ -112,8 +112,8 @@ h4 {
   border-radius: 5px;
   text-decoration: none;
   font-size: 18px;
-  background-color: #568c63;
-  border: 2px solid  #2a4359;
+  background-color:  #56C02B;
+  border-color: #000;
   width: 180px;
   height: 40px;
   text-align: center;
@@ -121,8 +121,7 @@ h4 {
 }
 .btn_carbon_app_new_entry_main:hover {
   color: #fff;
-  background-color: #2a4359;
-  border: 2px solid #2a4359;
+  background-color: #009EDB;
   text-decoration: none;
 }
 /*Container new_entry */
