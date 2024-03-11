@@ -35,3 +35,8 @@ application.register_blueprint(contact)
 #application.register_blueprint(login)
 #application.register_blueprint(register)
 application.register_blueprint(users)
+
+# Test
+#app = Flask(__name__)
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Add this line to suppress the warning
