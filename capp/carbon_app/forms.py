@@ -30,7 +30,7 @@ class CarFormSUV(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
     choices=[('Petrol', 'Petrol'), ('Diesel', 'Diesel'), ('Electric', 'Electric')])
-  people = FloatField('People',[InputRequired(), NumberRange(min=0, max=5, message='Maximum number of people allowed is 5.')])
+  people = FloatField('People',[InputRequired(), NumberRange(min=0, max=7, message='Maximum number of people allowed is 7.')])
   submit = SubmitField('Submit') 
 
 class Long_haul_FlightForm(FlaskForm):

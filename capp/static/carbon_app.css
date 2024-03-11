@@ -8,7 +8,7 @@ Carbon App, section 2 (header, boxes): #8badd9
 /* Colors */
 /* Darkgreen = 13. Climate Action = #3F7E44*/
 /* Lime green = 15. Life on Land = #56C02B */
-/* UN Logo Blue =  2*/
+/* UN Logo Blue =  #009EDB*/
 
 /* Utilities  */
 p {
@@ -54,7 +54,7 @@ h4 {
   flex-wrap:wrap;
 }
 .container_buttons_links_header_carbon_app a:hover {
-  color: #466fa6;
+  background-color: #009EDB;
 }
 .container_buttons_links_header_carbon_app btn {
   width: 100px;
@@ -67,12 +67,12 @@ h4 {
 }
 /* Section carbon_app_new_entry_main */
 .section_carbon_app_new_entry_main {
-  background-color:#c5c8d9;
+  background-color:#fff;
 }
 .carbon_app_new_entry_main {
   display: flex;  
   align-items: start;
-  background: #c5c8d9;
+  background: #fff;
 }
 .carbon_app_new_entry_main .box {
   flex: 1;
