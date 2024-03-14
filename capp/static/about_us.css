@@ -10,6 +10,7 @@
     background-size: cover;
     color: #fff; /* White text */
     padding: 150px 0; /* Add padding for spacing */
+    text-shadow: 0.5px 0.5px #3F7E44; /* Add some shadow */
     text-align: center; /* Center align the text */
   }
   
@@ -17,6 +18,7 @@
     max-width: 1200px; /* Adjust the width as necessary */
     margin: 0 auto; /* Center the container */
     padding: 50px;
+
   }
   
   .our-vision h2 {
