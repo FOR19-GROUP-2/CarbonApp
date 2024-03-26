@@ -3,6 +3,8 @@
 /* Lime green = 15. Life on Land = #56C02B */
 /* UN Logo Blue =  #009EDB */
 
+/* Title / Buttons and Introduction*/
+
 .our-methodology {
     background: #fff; /* Dark green background, adjust the color as needed */
     background-size: cover;
@@ -27,7 +29,7 @@ font-size: 3.5em; /* Large font size for the heading */
 margin-bottom: 20px; /* Spacing between the heading and the paragraph */
 }
 
-.methodology1 {
+.methodology {
 background: #3F7E44;
 background-size: cover;
 color: #fff;
@@ -35,12 +37,12 @@ padding: 0 0 100px 0; /* Top -> Right -> Buttom -> Left*/
 text-align: center;
 }
 
-.methodology h2 {
+.methodology1 h2 {
     text-decoration: solid;
     margin-bottom: 20px; /* Spacing between the heading and the paragraph */
 }
 
-.methodology p {
+.methodology1 p {
 display: flex;
 flex-direction: column; 
 align-items: center;
@@ -48,5 +50,69 @@ text-align: left;
 width: 100%; 
 max-width: 800px;
 margin: 0 auto; 
+padding: 20px;
 }
+
+/* Formulas */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if needed, but we'll try to keep them side by side */
+    max-width: 1200px;
+    justify-content: space-between; /* Adjusts the space between the child elements */
+    margin: 0 auto;
+    gap: 20px; /* Adjust the gap to your preference, ensures some space between the columns */
+}
+  
+.strategy-column {
+    box-sizing: border-box; /* Includes padding and border in the element's total width */
+    width: calc(50% - 10px); /* Adjusts for the gap, ensuring two boxes fit side by side in the parent */
+    padding: 30px;
+}
+  
+  .left {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 5px 5px #000;
+  }
+  
+  .right {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 5px 5px #000;
+  }
+  
+  .strategy-column h1 {
+    margin-bottom: 1em; /* Space below the heading */
+    padding-top: 0.5em; /* Space above the heading */
+    padding: 10px;
+    border-top: 4px solid; /* Solid line above the heading */
+  }
+  
+  .left h1 {
+    border-color: #3F7E44; /* Black line for the left column */
+  }
+  
+  .right h1 {
+    border-color: #3F7E44; /* White line for the right column */
+  }
+  
+  .strategy-column p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 0; /* Removes default top margin from paragraphs */
+    margin-bottom: 1em; /* Space below paragraphs */
+  }
+  
+  .strategy-column ul {
+    list-style: none; /* Removes default list styling */
+    padding-left: 0; /* Aligns list with the rest of the content */
+    margin-top: 0; /* Removes default top margin from list */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .strategy-column {
+      width: 100%; /* Columns stack on top of each other on smaller screens */
+    }
+  }
 
