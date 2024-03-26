@@ -3,3 +3,50 @@
 /* Lime green = 15. Life on Land = #56C02B */
 /* UN Logo Blue =  #009EDB */
 
+.our-methodology {
+    background: #fff; /* Dark green background, adjust the color as needed */
+    background-size: cover;
+    color: #3F7E44; /* White text */
+    padding: 150px 0; /* Add padding for spacing */
+    text-align: center; /* Center align the text */
+    align-items: start;
+    justify-content: center;
+}
+.methodology-container {
+max-width: 1200px; /* Adjust the width as necessary */
+margin: 0 auto; /* Center the container */
+padding: 50px;
+}
+
+.wave{
+    margin: -1px;
+    }
+
+.our-methodology h2 {
+font-size: 3.5em; /* Large font size for the heading */
+margin-bottom: 20px; /* Spacing between the heading and the paragraph */
+}
+
+.methodology1 {
+background: #3F7E44;
+background-size: cover;
+color: #fff;
+padding: 0 0 100px 0; /* Top -> Right -> Buttom -> Left*/
+text-align: center;
+}
+
+.methodology h2 {
+    text-decoration: solid;
+    margin-bottom: 20px; /* Spacing between the heading and the paragraph */
+}
+
+.methodology p {
+display: flex;
+flex-direction: column; 
+align-items: center;
+text-align: left; 
+width: 100%; 
+max-width: 800px;
+margin: 0 auto; 
+}
+
