@@ -8,9 +8,8 @@
 .our-vision {
     background-image: url('/static/images/nature2.jpg');
     background-size: cover;
-    color: #fff; /* White text */
+    color: #3F7E44; /* White text */
     padding: 150px 0; /* Add padding for spacing */
-    text-shadow: 0.5px 0.5px #3F7E44; /* Add some shadow */
     text-align: center; /* Center align the text */
   }
   
