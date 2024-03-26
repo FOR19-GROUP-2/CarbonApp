@@ -2,6 +2,7 @@
 /* Darkgreen = 13. Climate Action = #3F7E44*/
 /* Lime green = 15. Life on Land = #56C02B */
 /* UN Logo Blue =  #009EDB */
+/* UN Light Grey =  #f1f1f1 */
 
 /* Our Vision */
 .our-vision {
@@ -46,7 +47,7 @@
   }
   
   .box1 {
-      background: #f1f4f7;
+      background: #f1f1f1;
       color: #3F7E44; /* Dark green text */
       border-radius: 10px;
       padding: 20px;
