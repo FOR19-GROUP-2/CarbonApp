@@ -7,10 +7,10 @@
   </div>
   <div class="container_buttons_header_home">
     <div class="btn">
-        <a href="{{ url_for('users.register') }}" class="btn-link">Our App</a>
+        <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn-link">Our App</a>
     </div>
     <div class="btn">
-        <a href="{{ url_for('users.login') }}" class="btn-link">Methodology Paper</a>
+      <a href="/static/pdf/test.pdf" target="_blank" class="btn-link">Methodology Paper</a>
     </div>
   </div>  
 </section>
@@ -23,35 +23,37 @@
   <div class="methodology1"> 
     <h2>The Project</h2>
     <p>
-      As part of the class Green Digitalization and App Developement,
-      our team has created an app to mitigate the carbon footprint within the transportation sector.
-      We will here give an overview of our calculations that are included in the app.
-      We have also included an example option, where it gives you an alternative way of tranportation and it shows how much you can save from it.
-      We hope this can help you, and help others make more enviromental conscious travel decisions. 
-    </p>
+      In our Green Digitalization and App Development course, our team developed an application aimed at reducing the carbon footprint associated with transportation. This presentation will provide a comprehensive overview of the calculations embedded within the app. Additionally, we will demonstrate a feature that suggests alternative transportation methods and quantifies potential carbon savings.</p>
+    <p>Our goal is to empower users to make more environmentally conscious travel choices, contributing positively to our planet's health.</p>
   </div>
   <div class="content-wrapper">
     <section class="strategy-column left">
       <h1> What are CO2 equivalents?</h1>
-      <p>We focus on the full life cycle of your certification business, from earning and maintaining designations to the relationships that support them. Our experts help you break down the process to identify inefficiencies.</p>
-      <p>We re-engineer and reassemble for a streamlined, efficient process.</p>
-      <p>Our years of experience creating seamless integrations and workflows have transformed basic certification requirements into powerful and robust programs.</p>
-      <p>Your staff and applicants will appreciate having our tools and resources at their fingertips.</p>
+      <p>Different greenhouse gasses, have different global warming potentials. Instead of saying to the user that they are emitting methane, nitrous oxide and CO2 - we add up the global warming potential of all the emissions, and present CO2 equivalents instead. </p>
+      <p>This way, it is easier for the user to compare different means of transportation, to ultimately choose the best alternative for their journey. .</p>
     </section>
     <section class="strategy-column right">
       <h1>How we aim to help users</h1>
-      <p>An Enterprise Certification Management System (eCMS)</p>
-      <p>Your CRM focuses on individuals, customers and members and has a “module” that keeps track of Certification. But this is just the beginning.</p>
-      <p>A true Enterprise Certification Management System manages the application and renewal processes for a program and is the center of your business’s ecosystem that brings all systems together to drive your business forward.</p>
-      <p>It provides a powerful combination of services you’ll love and nothing you won’t:</p>
+      <p>Our goal is to calculate people’s transportation carbon emissions and then to help them understand which of their habits are good and which of them could be changed so that they become actors of a new greener world. </p>
+      <p>To help them become actors of a greener world, we display the expected carbon footprint of their journey- as well as giving them suggestions on how to travel more environmentally friendly.</p>
     </section>
     <section class="strategy-column left">
-      <h1>Formula for x</h1>
-      <p>This is the content for the third box. You can customize this content to fit your needs, just like the first two boxes.</p>
+      <h1>The Calculation</h1>
+      <p>We take the user kilometer input data and multiply by the emission constants shown in the graph to the right, to produce the output of total CO2-eq emissions for the application user. This formula is displayed below.</p>
+      <p class="formula-mathjax">
+        \[ \text{Total CO}_2\text{-eq emitted per passenger} = \text{Emission constant} \times \text{km traveled} \]
+      </p>
+      <p>Depending on the user's travel distance and transportation type, we provide suggestions for the user to travel more environmentally friendly. This is calculated by subtracting the users choice’ with our suggestions. Formula is displayed below.</p>
+      <p class="formula-mathjax">
+        \[ \text{g CO}_2\text{-eq saved} = \text{g CO}_2\text{-eq users choice} - \text{g CO}_2\text{-eq our suggestion} \]
+      </p>
+      <p> If you are interested in learning about more of our formulas and data foundation, an extensive explanation is available in the Methodology paper</p>
     </section>
     <section class="strategy-column right">
-      <h1>Formula for y</h1>
-      <p>This is the content for the fourth box. Continue to provide valuable information or insights here that align with your overall message or theme.</p>
+      <h1>The Data</h1>
+      <p>This graph aims to show the CO2 equivielent of different means of transportation we have used in our App</p>
+      <img src="static/images/graph.png" alt="";>
+      <p>The full explanation, data foundation and calculations for the data shown in the graph, including the Data Table, is available in the Methodology paper.</p>
     </section>
   </div>
   </div>

@@ -26,7 +26,7 @@ padding: 50px;
 
 .our-methodology h2 {
 font-size: 3.5em; /* Large font size for the heading */
-margin-bottom: 20px; /* Spacing between the heading and the paragraph */
+margin-bottom: 15px; /* Spacing between the heading and the paragraph */
 }
 
 .methodology {
@@ -50,7 +50,7 @@ text-align: left;
 width: 100%; 
 max-width: 800px;
 margin: 0 auto; 
-padding: 20px;
+padding: 15px;
 }
 
 /* Formulas */
@@ -109,6 +109,30 @@ padding: 20px;
     margin-top: 0; /* Removes default top margin from list */
   }
 
+/* Adjustments for MathJax formulas */
+.formula-mathjax {
+  display: inline-block;
+  transform-origin: top left;
+  margin: 0 auto; /* Center the formula */
+}
+
+/* Responsive adjustments for formulas */
+
+@media (max-width: 1200px) {
+  .formula-mathjax {
+      transform: scale(0.8);
+  }
+}
+@media (max-width: 976px) {
+  .formula-mathjax {
+      transform: scale(0.7);
+  }
+}
+@media (max-width: 862px) {
+  .formula-mathjax {
+      transform: scale(0.6);
+  }
+}
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .strategy-column {
