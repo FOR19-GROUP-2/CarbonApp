@@ -150,5 +150,18 @@
       </div>
   </div> 
 </div>
+
+<script>
+  function toggleReadMore(id, btn) {
+    var moreText = document.getElementById(id);
+    if (moreText.style.display === "none" || moreText.style.display === '') {
+      moreText.style.display = "inline";  // Read More Button - Viser teksten
+      btn.textContent = "Read less";      // Endrer knappens tekst til "Read less"
+    } else {
+      moreText.style.display = "none";    // Skjuler teksten
+      btn.textContent = "Read more";      // Endrer knappens tekst tilbake til "Read more"
+    }
+  }
+</script>
     </body>
 </html>
