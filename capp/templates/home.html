@@ -12,6 +12,13 @@
           Our app is crafted to assist you in pinpointing the primary contributors
           to your carbon footprint and guiding you towards meaningful actions to minimize your environmental impact.
         </p>
+         {% if current_user.is_authenticated %}
+        <div class="container_buttons_header_home">
+          <div class="btn">
+              <a href="{{ url_for('users.logout') }}" class="btn-link">Logout</a>
+          </div>
+        </div>  
+        {% else %}
         <div class="container_buttons_header_home">
           <div class="btn">
               <a href="{{ url_for('users.register') }}" class="btn-link">Register</a>
@@ -20,6 +27,7 @@
               <a href="{{ url_for('users.login') }}" class="btn-link">Login</a>
           </div>
         </div>  
+        {% endif %}
       </div>
       <div class="box">
         <img src="{{url_for('static', filename='icons/destination2.svg')}}" width="325" height="325" alt=""/>
