@@ -81,6 +81,7 @@
                         <a href="{{ url_for('home.home_home') }}" class='logo-link'><img src="{{url_for('static', filename='images/logo.jpg')}}" height="60" width="10" alt="">
                         </a>
                     </h1>                    
+                    {% if current_user.is_authenticated %}                    
                     <nav>
                         <ul>
                             <li class="navbar_item">
@@ -89,8 +90,7 @@
                                 <a href="{{ url_for('methodology.methodology_home') }}" class="links">Methodology</a>
                             </li>
                             <li class="auth-links-navbar">
-                              <a href="{{ url_for('users.login') }}" class="auth-link">Login</a>
-                              <a href="{{ url_for('users.register') }}" class="auth-link">Register</a>
+                              <a href="{{ url_for('users.logout') }}" class="auth-link">Logout</a>
                           </li>
                             <li class="navbar_item">
                               <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="action_btn navbar_actionbtn">Try Our App</a>
@@ -100,6 +100,27 @@
                           </li>
                         </ul>
                     </nav>
+                    {% else %}
+                    <nav>
+                      <ul>
+                          <li class="navbar_item">
+                              <a href="{{ url_for('about_us.about_us_home') }}" class="links">About us</a>
+                              <a href="{{ url_for('contact.contact_home') }}" class="links">Contact</a>
+                              <a href="{{ url_for('methodology.methodology_home') }}" class="links">Methodology</a>
+                          </li>
+                          <li class="auth-links-navbar">
+                            <a href="{{ url_for('users.login') }}" class="auth-link">Login</a>
+                            <a href="{{ url_for('users.register') }}" class="auth-link">Register</a>
+                        </li>
+                          <li class="navbar_item">
+                            <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="action_btn navbar_actionbtn">Try Our App</a>
+                            <div class="toggle_btn">
+                              <i class="fa-solid fa-bars"></i>
+                            </div>
+                        </li>
+                      </ul>
+                    </nav>  
+                    {% endif %}
                 </div>
             </div>
             <div class="dropdown_menu">
