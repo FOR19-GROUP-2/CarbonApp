@@ -10,19 +10,11 @@ from capp import db
 from datetime import timedelta, datetime
 from flask_login import login_required, current_user
 from capp.carbon_app.forms import BusForm, CarForm, FerryForm,trainForm, BicycleForm, WalkForm, CarFormSUV, Domestic_FlightForm, Long_haul_FlightForm, long_distance_busForm, tramForm
+import json
+from sqlalchemy import desc
 
 carbon_app=Blueprint('carbon_app',__name__)
 
-#Emissions factor per transport in kg per passemger km
-#Data from: http://efdb.apps.eea.europa.eu/?source=%7B%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%2C%22display_type%22%3A%22tabular%22%7D
-#efco2={'Bus':{'Diesel':0.10231,'CNG':0.08,'Petrol':0.10231,'No Fossil Fuel':0},
- #   'Car':{'Petrol':0.18592,'Diesel':0.16453,'No Fossil Fuel':0},
-  #  'Plane':{'Petrol':0.24298},
-   # 'Ferry':{'Diesel':0.11131, 'CNG':0.1131, 'No Fossil Fuel':0},
-    #'Motorbike':{'Petrol':0.09816,'No Fossil Fuel':0},
-   # 'Scooter':{'No Fossil Fuel':0},
-    #'Bicycle':{'No Fossil Fuel':0},
-    #'Walk':{'No Fossil Fuel':0}}
 
 efco2={'Car: Small':{'Petrol':0.1462,'Diesel':0.1197,'Electric':0.0414},
     'Car: SUV':{'Petrol':0.2088,'Diesel':0.1835,'Electric':0.0477},
@@ -317,19 +309,243 @@ def new_entry_walk():
         return redirect(url_for('carbon_app.your_data'))
     return render_template('carbon_app/new_entry_walk.html', title='new entry walk', form=form)
 
+
 #Your data
+#@carbon_app.route('/carbon_app/carbon_app.html')
 @carbon_app.route('/carbon_app/your_data')
 @login_required
 def your_data():
+
     #Table
-    
     entries = Transport.query.filter_by(author=current_user). \
         filter(Transport.date> (datetime.now() - timedelta(days=5))).\
         order_by(Transport.date.desc()).order_by(Transport.transport.asc()).all()
+    
+     #Emissions by category
+    emissions_by_transport = db.session.query(db.func.sum(Transport.co2), Transport.transport). \
+        filter(Transport.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
+        group_by(Transport.transport).order_by(Transport.transport.asc()).all()
+    emission_transport = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    first_tuple_elements = []
+    second_tuple_elements = []
+    for a_tuple in emissions_by_transport:
+        first_tuple_elements.append(a_tuple[0])
+        second_tuple_elements.append(a_tuple[1])
 
-    return render_template('carbon_app/your_data.html', title='your_data', entries=entries)
+    if 'Car: Small' in second_tuple_elements:
+        index_car_small = second_tuple_elements.index('Car: Small')
+        emission_transport[1]=first_tuple_elements[index_car_small]
+    else:
+        emission_transport[1]
+
+    if 'Car: SUV' in second_tuple_elements:
+        index_car = second_tuple_elements.index('Car: SUV')
+        emission_transport[2]=first_tuple_elements[index_car]
+    else:
+        emission_transport[2]
+
+    if 'Bus' in second_tuple_elements:
+        index_bus = second_tuple_elements.index('Bus')
+        emission_transport[3]=first_tuple_elements[index_bus]
+    else:
+        emission_transport[3]  
+
+    if 'Long distance bus (Coach)' in second_tuple_elements:
+        index_bus = second_tuple_elements.index('Long distance bus (Coach)')
+        emission_transport[4]=first_tuple_elements[index_bus]
+    else:
+        emission_transport[4]   
+
+    if 'Domestic Flight' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Domestic Flight')
+        emission_transport[5]=first_tuple_elements[index_ferry]
+    else:
+        emission_transport[5]
+
+    if 'Long-haul Flight' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Long-haul Flight')
+        emission_transport[6]=first_tuple_elements[index_ferry]
+    else:
+        emission_transport[6]
+
+    if 'Tram' in second_tuple_elements:
+        index_tram = second_tuple_elements.index('Tram')
+        emission_transport[7]=first_tuple_elements[index_tram]
+    else:
+        emission_transport[7]
+
+    if 'Train' in second_tuple_elements:
+        index_train = second_tuple_elements.index('Train')
+        emission_transport[8]=first_tuple_elements[index_train]
+    else:
+        emission_transport[8]
+
+    if 'Ferry' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Ferry')
+        emission_transport[9]=first_tuple_elements[index_ferry]
+    else:
+        emission_transport[9]
 
 
+    #Kilometers by category
+    kms_by_transport = db.session.query(db.func.sum(Transport.kms), Transport.transport). \
+        filter(Transport.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
+        group_by(Transport.transport).order_by(Transport.transport.asc()).all()
+    kms_transport = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    first_tuple_elements = []
+    second_tuple_elements = []
+    for a_tuple in kms_by_transport:
+        first_tuple_elements.append(a_tuple[0])
+        second_tuple_elements.append(a_tuple[1])
+
+    if 'Walk' in second_tuple_elements:
+        index_bicycle = second_tuple_elements.index('Walk')
+        kms_transport[0]=first_tuple_elements[index_bicycle]
+    else:
+        kms_transport[0] 
+
+    if 'Bicycle' in second_tuple_elements:
+        index_bicycle = second_tuple_elements.index('Bicycle')
+        kms_transport[1]=first_tuple_elements[index_bicycle]
+    else:
+        kms_transport[1] 
+
+    if 'Car: Small' in second_tuple_elements:
+        index_car_small = second_tuple_elements.index('Car: Small')
+        kms_transport[2]=first_tuple_elements[index_car_small]
+    else:
+        kms_transport[2]
+
+    if 'Car: SUV' in second_tuple_elements:
+        index_car_SUV = second_tuple_elements.index('Car: SUV')
+        kms_transport[3]=first_tuple_elements[index_car_SUV]
+    else:
+        kms_transport[3]
+
+    if 'Bus' in second_tuple_elements:
+        index_bus = second_tuple_elements.index('Bus')
+        kms_transport[4]=first_tuple_elements[index_bus]
+    else:
+        kms_transport[4]
+
+    if 'Long distance bus (Coach)' in second_tuple_elements:
+        index_car_SUV = second_tuple_elements.index('Long distance bus (Coach)')
+        kms_transport[5]=first_tuple_elements[index_car_SUV]
+    else:
+        kms_transport[5]
+
+    if 'Domestic Flight' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Domestic Flight')
+        kms_transport[6]=first_tuple_elements[index_ferry]
+    else:
+        kms_transport[6]
+
+    if 'Long-haul Flight' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Long-haul Flight')
+        kms_transport[7]=first_tuple_elements[index_ferry]
+    else:
+        kms_transport[7]
+
+    if 'Tram' in second_tuple_elements:
+        index_tram = second_tuple_elements.index('Tram')
+        kms_transport[8]=first_tuple_elements[index_tram]
+    else:
+        kms_transport[8]
+
+    if 'Train' in second_tuple_elements:
+        index_train = second_tuple_elements.index('Train')
+        kms_transport[9]=first_tuple_elements[index_train]
+    else:
+        kms_transport[9]
+
+    if 'Ferry' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Ferry')
+        kms_transport[10]=first_tuple_elements[index_ferry]
+    else:
+        kms_transport[10]
+
+
+
+    #Emissions by date (individual)
+    emissions_by_date = db.session.query(db.func.sum(Transport.co2), Transport.date). \
+        filter(Transport.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
+        group_by(Transport.date).order_by(Transport.date.asc()).all()
+    over_time_emissions = []
+    dates_label = []
+    for total, date in emissions_by_date:
+        dates_label.append(date.strftime("%m-%d-%y"))
+        over_time_emissions.append(total)    
+
+    #Kms by date (individual)
+    kms_by_date = db.session.query(db.func.sum(Transport.kms), Transport.date). \
+        filter(Transport.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
+        group_by(Transport.date).order_by(Transport.date.asc()).all()
+    over_time_kms = []
+    dates_label = []
+    for total, date in kms_by_date:
+        dates_label.append(date.strftime("%m-%d-%y"))
+        over_time_kms.append(total)      
+
+    #message 
+    latest_entry = db.session.query(Transport.co2, Transport.transport, Transport.kms).order_by(Transport.date.desc()).first()
+    latest_co2 = latest_entry[0] if latest_entry else None
+    latest_transport = latest_entry[1] if latest_entry else None
+    latest_kms = latest_entry[2] if latest_entry else None
+
+    if latest_kms <= 2:
+        message = f"If you would have chosen walking, you would produce {latest_co2} less grams of CO2-eq."
+    elif 2 < latest_kms <= 10:
+        message = f"You could have saved {latest_co2} grams of CO2-eq by biking."
+    elif 10 < latest_kms <= 25:
+        if latest_transport != 'Ferry':
+            ferry = latest_kms * efco2['Ferry']['Not my choice']
+            saved = latest_co2 - ferry
+            saved = round(saved, 2)
+            message = f"You could have saved {saved} grams of CO2-eq by taking the ferry."
+        else:
+            message = "You made a good transportation choiche!"
+    elif 25 < latest_kms <= 50:
+        if latest_transport != 'Tram':
+            tram = latest_kms * efco2['Tram']['Not my choice']
+            saved = latest_co2 - tram
+            saved = round(saved, 2)
+            message = f"You could have saved {saved} grams of CO2-eq by taking the tram."
+        else:
+            message = "You made a good transportation choiche!"
+    elif 50 < latest_kms <= 250:
+        if latest_transport != 'Long distance bus (Coach)':
+            long_distance_bus_coach = latest_kms * efco2['Long distance bus (Coach)']['Not my choice']
+            saved = latest_co2 - long_distance_bus_coach 
+            saved = round(saved, 2)
+            message = f"You could have saved {saved} grams of CO2-eq by taking the long distance bus (Coach)."
+        else:
+            message = "You made a good transportation choiche!"
+    elif 250 < latest_kms:
+        if latest_transport != 'Train':
+            train = latest_kms * efco2['Train']['Not my choice']
+            saved = latest_co2 - train
+            saved = round(saved, 2)
+            message = f"You could have saved {saved} grams of CO2-eq by taking the train."
+        else:
+            message = "You made a good transportation choiche!"
+    else:
+        message = "You made a good transportation choiche!"
+    #error handling, över 1000 km med tåg = error 
+        #add print(you made a good choiche) instead of None
+    #Add the other transport modes to the graphs
+        #ta bort saker från databasen 
+    #ordningern på fordonen har skillnad i your_data.html - gör rätt ordning
+
+    return render_template('carbon_app/your_data.html', title='your_data', entries=entries,
+        emissions_by_transport_python_dic=emissions_by_transport,     
+        emission_transport_python_list=emission_transport,             
+        emissions_by_transport=json.dumps(emission_transport),
+        kms_by_transport=json.dumps(kms_transport),
+        over_time_emissions=json.dumps(over_time_emissions),
+        over_time_kms=json.dumps(over_time_kms),
+        dates_label=json.dumps(dates_label),
+        message=message)
+        
     
 
 #Delete emission
@@ -340,5 +556,8 @@ def delete_emission(entry_id):
     db.session.commit()
     flash("Entry deleted", "success")
     return redirect(url_for('carbon_app.your_data'))
+    
+  
+
     
   
