@@ -276,6 +276,114 @@ h4 {
 .container_buttons_links_main_menu a:hover {
   color: #009EDB;
 }
+
+*End container table_main*/
+/*Container two_emissions_graphs */
+.two_emissions_graphs {
+  display: flex;
+  background: #ffffff;
+  }  
+.two_emissions_graphs .container {
+  display: flex;
+  background: #ffffff;
+}
+.two_emissions_graphs .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.two_emissions_graphs .container .box {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.two_emissions_graphs .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #f1f4f7;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.two_emissions_graphs .container  .box:nth-of-type(2) {
+  flex-grow:1;
+  background: #f1f4f7;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.two_emissions_graphs .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #568c63;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+/*End container two_emissions_graphs*/
+/*Container main menu */
+.main_menu {
+  display: flex;
+  background: #ffffff;
+  }  
+.main_menu .container {
+  display: flex;
+  background: #ffffff;
+}
+.main_menu .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.main_menu .container .box {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.main_menu .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.main_menu .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #48a025;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.main_menu .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*End container main menu*/
+
+/*Container buttons section main menu */
+.container_buttons_links_main_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_main_menu a:hover {
+  color: #568c63;
+}
 /*End container buttons section main menu*/
 
 @media (max-width:768px) { 
