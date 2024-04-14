@@ -334,57 +334,57 @@ def your_data():
 
     if 'Car: Small' in second_tuple_elements:
         index_car_small = second_tuple_elements.index('Car: Small')
-        emission_transport[1]=first_tuple_elements[index_car_small]
+        emission_transport[0]=first_tuple_elements[index_car_small]
     else:
-        emission_transport[1]
+        emission_transport[0]
 
     if 'Car: SUV' in second_tuple_elements:
         index_car = second_tuple_elements.index('Car: SUV')
-        emission_transport[2]=first_tuple_elements[index_car]
+        emission_transport[1]=first_tuple_elements[index_car]
     else:
-        emission_transport[2]
+        emission_transport[1]
 
     if 'Bus' in second_tuple_elements:
         index_bus = second_tuple_elements.index('Bus')
-        emission_transport[3]=first_tuple_elements[index_bus]
+        emission_transport[2]=first_tuple_elements[index_bus]
     else:
-        emission_transport[3]  
+        emission_transport[2]  
 
     if 'Long distance bus (Coach)' in second_tuple_elements:
         index_bus = second_tuple_elements.index('Long distance bus (Coach)')
-        emission_transport[4]=first_tuple_elements[index_bus]
+        emission_transport[3]=first_tuple_elements[index_bus]
     else:
-        emission_transport[4]   
+        emission_transport[3]   
 
     if 'Domestic Flight' in second_tuple_elements:
         index_ferry = second_tuple_elements.index('Domestic Flight')
+        emission_transport[4]=first_tuple_elements[index_ferry]
+    else:
+        emission_transport[4]
+
+    if 'Long-haul Flight' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Long-haul Flight')
         emission_transport[5]=first_tuple_elements[index_ferry]
     else:
         emission_transport[5]
 
-    if 'Long-haul Flight' in second_tuple_elements:
-        index_ferry = second_tuple_elements.index('Long-haul Flight')
-        emission_transport[6]=first_tuple_elements[index_ferry]
+    if 'Tram' in second_tuple_elements:
+        index_tram = second_tuple_elements.index('Tram')
+        emission_transport[6]=first_tuple_elements[index_tram]
     else:
         emission_transport[6]
 
-    if 'Tram' in second_tuple_elements:
-        index_tram = second_tuple_elements.index('Tram')
-        emission_transport[7]=first_tuple_elements[index_tram]
+    if 'Train' in second_tuple_elements:
+        index_train = second_tuple_elements.index('Train')
+        emission_transport[7]=first_tuple_elements[index_train]
     else:
         emission_transport[7]
 
-    if 'Train' in second_tuple_elements:
-        index_train = second_tuple_elements.index('Train')
-        emission_transport[8]=first_tuple_elements[index_train]
-    else:
-        emission_transport[8]
-
     if 'Ferry' in second_tuple_elements:
         index_ferry = second_tuple_elements.index('Ferry')
-        emission_transport[9]=first_tuple_elements[index_ferry]
+        emission_transport[8]=first_tuple_elements[index_ferry]
     else:
-        emission_transport[9]
+        emission_transport[8]
 
 
     #Kilometers by category
@@ -398,72 +398,71 @@ def your_data():
         first_tuple_elements.append(a_tuple[0])
         second_tuple_elements.append(a_tuple[1])
 
-    if 'Walk' in second_tuple_elements:
-        index_bicycle = second_tuple_elements.index('Walk')
-        kms_transport[0]=first_tuple_elements[index_bicycle]
-    else:
-        kms_transport[0] 
-
-    if 'Bicycle' in second_tuple_elements:
-        index_bicycle = second_tuple_elements.index('Bicycle')
-        kms_transport[1]=first_tuple_elements[index_bicycle]
-    else:
-        kms_transport[1] 
-
     if 'Car: Small' in second_tuple_elements:
         index_car_small = second_tuple_elements.index('Car: Small')
-        kms_transport[2]=first_tuple_elements[index_car_small]
+        kms_transport[0]=first_tuple_elements[index_car_small]
     else:
-        kms_transport[2]
+        kms_transport[0]
 
     if 'Car: SUV' in second_tuple_elements:
         index_car_SUV = second_tuple_elements.index('Car: SUV')
+        kms_transport[1]=first_tuple_elements[index_car_SUV]
+    else:
+        kms_transport[1]
+
+    if 'Bus' in second_tuple_elements:
+        index_bus = second_tuple_elements.index('Bus')
+        kms_transport[2]=first_tuple_elements[index_bus]
+    else:
+        kms_transport[2]
+
+    if 'Long distance bus (Coach)' in second_tuple_elements:
+        index_car_SUV = second_tuple_elements.index('Long distance bus (Coach)')
         kms_transport[3]=first_tuple_elements[index_car_SUV]
     else:
         kms_transport[3]
 
-    if 'Bus' in second_tuple_elements:
-        index_bus = second_tuple_elements.index('Bus')
-        kms_transport[4]=first_tuple_elements[index_bus]
+    if 'Domestic Flight' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Domestic Flight')
+        kms_transport[4]=first_tuple_elements[index_ferry]
     else:
         kms_transport[4]
 
-    if 'Long distance bus (Coach)' in second_tuple_elements:
-        index_car_SUV = second_tuple_elements.index('Long distance bus (Coach)')
-        kms_transport[5]=first_tuple_elements[index_car_SUV]
+    if 'Long-haul Flight' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Long-haul Flight')
+        kms_transport[5]=first_tuple_elements[index_ferry]
     else:
         kms_transport[5]
 
-    if 'Domestic Flight' in second_tuple_elements:
-        index_ferry = second_tuple_elements.index('Domestic Flight')
-        kms_transport[6]=first_tuple_elements[index_ferry]
+    if 'Tram' in second_tuple_elements:
+        index_tram = second_tuple_elements.index('Tram')
+        kms_transport[6]=first_tuple_elements[index_tram]
     else:
         kms_transport[6]
 
-    if 'Long-haul Flight' in second_tuple_elements:
-        index_ferry = second_tuple_elements.index('Long-haul Flight')
-        kms_transport[7]=first_tuple_elements[index_ferry]
+    if 'Train' in second_tuple_elements:
+        index_train = second_tuple_elements.index('Train')
+        kms_transport[7]=first_tuple_elements[index_train]
     else:
         kms_transport[7]
 
-    if 'Tram' in second_tuple_elements:
-        index_tram = second_tuple_elements.index('Tram')
-        kms_transport[8]=first_tuple_elements[index_tram]
+    if 'Ferry' in second_tuple_elements:
+        index_ferry = second_tuple_elements.index('Ferry')
+        kms_transport[8]=first_tuple_elements[index_ferry]
     else:
         kms_transport[8]
 
-    if 'Train' in second_tuple_elements:
-        index_train = second_tuple_elements.index('Train')
-        kms_transport[9]=first_tuple_elements[index_train]
+    if 'Bicycle' in second_tuple_elements:
+        index_bicycle = second_tuple_elements.index('Bicycle')
+        kms_transport[9]=first_tuple_elements[index_bicycle]
     else:
-        kms_transport[9]
+        kms_transport[9] 
 
-    if 'Ferry' in second_tuple_elements:
-        index_ferry = second_tuple_elements.index('Ferry')
-        kms_transport[10]=first_tuple_elements[index_ferry]
+    if 'Walk' in second_tuple_elements:
+        index_bicycle = second_tuple_elements.index('Walk')
+        kms_transport[10]=first_tuple_elements[index_bicycle]
     else:
-        kms_transport[10]
-
+        kms_transport[10] 
 
 
     #Emissions by date (individual)
