@@ -87,6 +87,28 @@
   .box1 p {
       flex-grow: 1; /* Makes the paragraph take up any extra space */
   }
+.read-more-btn {
+  background-color: transparent; /* Gjør bakgrunnen gjennomsiktig */
+  color: #3F7E44; /* Samme grønnfarge som brukt andre steder */
+  border: 2px solid #3F7E44; /* Tillegger en grense med samme farge */
+  padding: 8px 15px; /* Standardisert padding */
+  text-decoration: none; /* Fjerner underlinjen fra tekst */
+  border-radius: 4px; /* Avrunder hjørnene for å matche eksisterende knapper */
+  font-size: 0.9em; /* Juster tekststørrelsen etter behov */
+  cursor: pointer; /* Endrer musepekeren til å indikere klikkbarhet */
+  margin-top: 10px; /* Legger til margin på toppen for avstand */
+  transition: background-color 0.3s, color 0.3s; /* Glatt overgangseffekt for hover */
+}
+
+.read-more-btn:hover {
+  background-color: #3F7E44; /* Endrer bakgrunnsfargen til grønn ved hover */
+  color: white; /* Endrer tekstfargen til hvit ved hover */
+}
+
+.more {
+  display: none; /* Gjør at teksten er skjult ved innlasting av siden */
+}
+
   
   /* Button style for LinkedIn links */
   .btn_developers {
