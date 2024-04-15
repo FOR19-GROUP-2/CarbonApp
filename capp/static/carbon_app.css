@@ -127,11 +127,11 @@ h4 {
 /*Container new_entry */
 .new_entry {
   display: flex;
-  background: #c5c8d9;
+  background: #f1f4f7;
   }  
 .new_entry .container {
   display: flex;
-  background: #c5c8d9;
+  background: #f1f4f7;
 }
 .new_entry .container {
   display: flex;
@@ -140,7 +140,7 @@ h4 {
 }
 .new_entry .container .box {
   flex: 1;
-  background: #c5c8d9;
+  background: #f1f4f7;
   border-radius: 2px;
   margin: 20px 10px;
   padding: 15px 20px;
@@ -174,11 +174,11 @@ h4 {
 /*Container table_main */
 .table_main {
   display: flex;
-  background: #c5c8d9;
+  background: #f1f4f7;
   }  
 .table_main .container {
   display: flex;
-  background: #c5c8d9;
+  background: #f1f4f7;
 }
 .table_main .container {
   display: flex;
@@ -187,7 +187,7 @@ h4 {
 }
 .table_main .container .box {
   flex: 1;
-  background: #c5c8d9;
+  background: #f1f4f7;
   border-radius: 2px;
   margin: 20px 10px;
   padding: 15px 20px;
@@ -203,7 +203,7 @@ h4 {
 }  
 .table_main .container  .box:nth-of-type(2) {
   flex-grow:6;
-  background: #568c63;
+  background: #f1f4f7;
   border-radius: 10px;
   margin: 20px 10px;
   padding: 15px 20px;
@@ -221,11 +221,11 @@ h4 {
 /*Container main menu */
 .main_menu {
   display: flex;
-  background: #c5c8d9;
+  background: #f1f4f7;
   }  
 .main_menu .container {
   display: flex;
-  background: #c5c8d9;
+  background: #f1f4f7;
 }
 .main_menu .container {
   display: flex;
@@ -234,7 +234,7 @@ h4 {
 }
 .main_menu .container .box {
   flex: 1;
-  background: #c5c8d9;
+  background: #f1f4f7;
   border-radius: 2px;
   margin: 20px 10px;
   padding: 15px 20px;
@@ -277,7 +277,7 @@ h4 {
   color: #009EDB;
 }
 
-*End container table_main*/
+/*End container table_main*/
 /*Container two_emissions_graphs */
 .two_emissions_graphs {
   display: flex;
