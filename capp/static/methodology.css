@@ -6,17 +6,17 @@
 /* Title / Buttons and Introduction*/
 
 .our-methodology {
-    background: #fff; /* Dark green background, adjust the color as needed */
+    background: #fff; 
     background-size: cover;
-    color: #3F7E44; /* White text */
-    padding: 150px 0; /* Add padding for spacing */
-    text-align: center; /* Center align the text */
+    color: #3F7E44; 
+    padding: 150px 0; 
+    text-align: center; 
     align-items: start;
     justify-content: center;
 }
 .methodology-container {
-max-width: 1200px; /* Adjust the width as necessary */
-margin: 0 auto; /* Center the container */
+max-width: 1200px; /
+margin: 0 auto; 
 padding: 50px;
 }
 
@@ -25,8 +25,8 @@ padding: 50px;
     }
 
 .our-methodology h2 {
-font-size: 3.5em; /* Large font size for the heading */
-margin-bottom: 15px; /* Spacing between the heading and the paragraph */
+font-size: 3.5em; 
+margin-bottom: 15px; 
 }
 
 .methodology {
@@ -39,7 +39,7 @@ text-align: center;
 
 .methodology1 h2 {
     text-decoration: solid;
-    margin-bottom: 20px; /* Spacing between the heading and the paragraph */
+    margin-bottom: 20px; 
 }
 
 .methodology1 p {
@@ -60,7 +60,7 @@ padding: 15px;
     max-width: 1200px;
     justify-content: space-between; /* Adjusts the space between the child elements */
     margin: 0 auto;
-    gap: 20px; /* Adjust the gap to your preference, ensures some space between the columns */
+    gap: 20px; /* Adjust the gap to ensures some space between the columns */
 }
   
 .strategy-column {
