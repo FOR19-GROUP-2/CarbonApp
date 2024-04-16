@@ -53,7 +53,19 @@
                       </fieldset>
                       </br>
                       <div class="form-group">
-                          {{ form.submit(class="btn btn-outline-info") }}
+                        <head>
+                            <style>
+                              .btn-custom {
+                                background-color: #56C02B; /* Normal state background */
+                              }
+                              .btn-custom:hover {
+                                background-color: #009EDB; /* Hover state background */
+                              }
+                            </style>
+                          </head>
+                          <body>
+                            {{ form.submit(class="btn btn-primary btn-custom") }}
+                          </body>
                       </div>
               </form>
               </br>
