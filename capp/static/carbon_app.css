@@ -32,11 +32,11 @@ h4 {
 }
 .header_carbon_app .box {
   flex: 1;
-  background: #fff;
+  background: #f1f4f7;
   color: #000;
   border-radius: 10px;
   margin: 20px 10px;
-  padding: 15px 20px;
+  padding: 15px 150px;
   text-align:center;
   align-items: center;
   justify-content: center;
@@ -52,11 +52,14 @@ h4 {
   justify-content: center;
   align-items: center;
   flex-wrap:wrap;
+  background-color: #f1f4f7;
 }
 .container_buttons_links_header_carbon_app a:hover {
   background-color: #009EDB;
+  color: #fff;
+  text-decoration: none;
 }
-.container_buttons_links_header_carbon_app btn {
+.container_buttons_links_header_carbon_app .btn-primary {
   width: 100px;
   height: 100px;
   background: #56C02B;
@@ -64,6 +67,8 @@ h4 {
   display: flex;
   justify-content:center;
   align-items:center;
+  width: 150px;
+  height: 50px;
   
 }
 /* Section carbon_app_new_entry_main */
