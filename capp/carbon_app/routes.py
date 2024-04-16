@@ -493,7 +493,7 @@ def your_data():
     latest_transport = latest_entry[1] if latest_entry else None
     latest_kms = latest_entry[2] if latest_entry else None
 
-    
+
 
     if latest_kms != None:
         if latest_kms <= 2:
@@ -541,11 +541,16 @@ def your_data():
                 message = "You made a good transportation choiche!"
         else:
             message = "You made a good transportation choiche!"
+
     #error handling, över 1000 km med tåg = error 
         #add print(you made a good choiche) instead of None
     #Add the other transport modes to the graphs
         #ta bort saker från databasen 
     #ordningern på fordonen har skillnad i your_data.html - gör rätt ordning
+        
+    # Error hvis man får negativ saved
+    if saved<=0:
+        message = "You made a good transportation choice!"
 
     return render_template('carbon_app/your_data.html', title='your_data', entries=entries,
         emissions_by_transport_python_dic=emissions_by_transport,     
