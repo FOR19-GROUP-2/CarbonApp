@@ -486,49 +486,61 @@ def your_data():
         over_time_kms.append(total)      
 
     #message 
-    latest_entry = db.session.query(Transport.co2, Transport.transport, Transport.kms).order_by(Transport.date.desc()).first()
+    message = 'No availible data yet'
+    #latest_entry = db.session.query(Transport.co2, Transport.transport, Transport.kms).order_by(Transport.date.desc()).first()
+    latest_entry = db.session.query(Transport.co2, Transport.transport, Transport.kms).filter_by(author=current_user).order_by(Transport.date.desc()).first()
     latest_co2 = latest_entry[0] if latest_entry else None
     latest_transport = latest_entry[1] if latest_entry else None
     latest_kms = latest_entry[2] if latest_entry else None
 
-    if latest_kms <= 2:
-        message = f"If you would have chosen walking, you would produce {latest_co2} less grams of CO2-eq."
-    elif 2 < latest_kms <= 10:
-        message = f"You could have saved {latest_co2} grams of CO2-eq by biking."
-    elif 10 < latest_kms <= 25:
-        if latest_transport != 'Ferry':
-            ferry = latest_kms * efco2['Ferry']['Not my choice']
-            saved = latest_co2 - ferry
-            saved = round(saved, 2)
-            message = f"You could have saved {saved} grams of CO2-eq by taking the ferry."
+    
+
+    if latest_kms != None:
+        if latest_kms <= 2:
+            if latest_transport != 'Walk':
+                message = f"If you would have chosen walking, you would produce {latest_co2} less kg of CO2-eq."
+            else:
+                message = "You made a good transportation choiche!"
+           
+        elif 2 < latest_kms <= 10:
+            if latest_transport != 'Bicycle':
+                message = f"You could have saved {latest_co2} kg of CO2-eq by biking."
+            else:
+                message = "You made a good transportation choiche!"
+        elif 10 < latest_kms <= 25:
+            if latest_transport != 'Ferry':
+                ferry = latest_kms * efco2['Ferry']['Not my choice']
+                saved = latest_co2 - ferry
+                saved = round(saved, 2)
+                message = f"You could have saved {saved} kg of CO2-eq by taking the ferry."
+            else:
+                message = "You made a good transportation choiche!"
+        elif 25 < latest_kms <= 50:
+            if latest_transport != 'Tram':
+                tram = latest_kms * efco2['Tram']['Not my choice']
+                saved = latest_co2 - tram
+                saved = round(saved, 2)
+                message = f"You could have saved {saved} kg of CO2-eq by taking the tram."
+            else:
+                message = "You made a good transportation choiche!"
+        elif 50 < latest_kms <= 250:
+            if latest_transport != 'Long distance bus (Coach)':
+                long_distance_bus_coach = latest_kms * efco2['Long distance bus (Coach)']['Not my choice']
+                saved = latest_co2 - long_distance_bus_coach 
+                saved = round(saved, 2)
+                message = f"You could have saved {saved} kg of CO2-eq by taking the long distance bus (Coach)."
+            else:
+                message = "You made a good transportation choiche!"
+        elif 250 < latest_kms:
+            if latest_transport != 'Train':
+                train = latest_kms * efco2['Train']['Not my choice']
+                saved = latest_co2 - train
+                saved = round(saved, 2)
+                message = f"You could have saved {saved} kg of CO2-eq by taking the train."
+            else:
+                message = "You made a good transportation choiche!"
         else:
             message = "You made a good transportation choiche!"
-    elif 25 < latest_kms <= 50:
-        if latest_transport != 'Tram':
-            tram = latest_kms * efco2['Tram']['Not my choice']
-            saved = latest_co2 - tram
-            saved = round(saved, 2)
-            message = f"You could have saved {saved} grams of CO2-eq by taking the tram."
-        else:
-            message = "You made a good transportation choiche!"
-    elif 50 < latest_kms <= 250:
-        if latest_transport != 'Long distance bus (Coach)':
-            long_distance_bus_coach = latest_kms * efco2['Long distance bus (Coach)']['Not my choice']
-            saved = latest_co2 - long_distance_bus_coach 
-            saved = round(saved, 2)
-            message = f"You could have saved {saved} grams of CO2-eq by taking the long distance bus (Coach)."
-        else:
-            message = "You made a good transportation choiche!"
-    elif 250 < latest_kms:
-        if latest_transport != 'Train':
-            train = latest_kms * efco2['Train']['Not my choice']
-            saved = latest_co2 - train
-            saved = round(saved, 2)
-            message = f"You could have saved {saved} grams of CO2-eq by taking the train."
-        else:
-            message = "You made a good transportation choiche!"
-    else:
-        message = "You made a good transportation choiche!"
     #error handling, över 1000 km med tåg = error 
         #add print(you made a good choiche) instead of None
     #Add the other transport modes to the graphs
