@@ -14,22 +14,22 @@
   }
   
   .vision-container {
-    max-width: 1200px; /* Adjust the width as necessary */
-    margin: 0 auto; /* Center the container */
+    max-width: 1200px;  
+    margin: 0 auto; 
     padding: 50px;
 
   }
   
   .our-vision h2 {
-    font-size: 3.5em; /* Large font size for the heading */
-    margin-bottom: 20px; /* Spacing between the heading and the paragraph */
+    font-size: 3.5em; 
+    margin-bottom: 20px; 
   }
   
   .our-vision p {
-    font-size: 2.2em; /* Readable font size for the paragraph */
-    line-height: 1.6; /* Line height for paragraph readability */
-    max-width: 800px; /* Max width for the paragraph to maintain readability */
-    margin: 0 auto; /* Center the text block */
+    font-size: 2.2em; 
+    line-height: 1.6; 
+    max-width: 800px; 
+    margin: 0 auto; 
   }
   
   /* Section developers */
@@ -42,7 +42,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      gap: 35px; /* This already sets the gap between the boxes */
+      gap: 35px; /* Gap between boxes*/
   }
   
   .box1 {
@@ -51,7 +51,7 @@
       border-radius: 10px;
       padding: 20px;
       text-align: center;
-      width: 250px; /* Adjust the width as necessary */
+      width: 250px; /* Width adjustment */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -65,48 +65,48 @@
   
   .box1 img {
       border-radius: 50%;
-      width: 120px; /* Adjust size as necessary */
-      height: 120px; /* Adjust size as necessary */
-      object-fit: cover; /* Ensures the images cover the area nicely */
+      width: 120px; 
+      height: 120px; 
+      object-fit: cover; 
       align-self: center;
       margin-bottom: 15px;
   }
   
   .box1 h3 {
-      margin-bottom: 10px; /* Reduced from 30px to accommodate title */
+      margin-bottom: 10px; 
   }
   
   /* Title styling for each box */
   .box1 .title1 {
-      font-size: 1.25em; /* Smaller font size for the title */
-      color: #555; /* Darker color for the title */
+      font-size: 1.25em; 
+      color: #555; 
       margin-bottom: 20px; /* Space between the title and the paragraph */
-      font-weight: bold; /* Make the title bold */
+      font-weight: bold; 
   }
   
   .box1 p {
       flex-grow: 1; /* Makes the paragraph take up any extra space */
   }
 .read-more-btn {
-  background-color: transparent; /* Gjør bakgrunnen gjennomsiktig */
-  color: #3F7E44; /* Samme grønnfarge som brukt andre steder */
-  border: 2px solid #3F7E44; /* Tillegger en grense med samme farge */
-  padding: 8px 15px; /* Standardisert padding */
-  text-decoration: none; /* Fjerner underlinjen fra tekst */
-  border-radius: 4px; /* Avrunder hjørnene for å matche eksisterende knapper */
-  font-size: 0.9em; /* Juster tekststørrelsen etter behov */
-  cursor: pointer; /* Endrer musepekeren til å indikere klikkbarhet */
-  margin-top: 10px; /* Legger til margin på toppen for avstand */
-  transition: background-color 0.3s, color 0.3s; /* Glatt overgangseffekt for hover */
+  background-color: transparent; 
+  color: #3F7E44; 
+  border: 2px solid #3F7E44;
+  padding: 8px 15px; 
+  text-decoration: none; 
+  border-radius: 4px; 
+  font-size: 0.9em; 
+  cursor: pointer; 
+  margin-top: 10px; 
+  transition: background-color 0.3s, color 0.3s; 
 }
 
 .read-more-btn:hover {
-  background-color: #3F7E44; /* Endrer bakgrunnsfargen til grønn ved hover */
-  color: white; /* Endrer tekstfargen til hvit ved hover */
+  background-color: #3F7E44; /* Hover color */
+  color: white; /* Text color when hover*/
 }
 
 .more {
-  display: none; /* Gjør at teksten er skjult ved innlasting av siden */
+  display: none; 
 }
 
   
@@ -131,7 +131,7 @@
   
   /* Increase the bottom margin of the first row of boxes */
   .developers .box1:nth-of-type(-n+4) {
-      margin-bottom: 35px; /* Increased space between the first and second row */
+      margin-bottom: 35px; 
   }
   
   @media (max-width: 1024px) {
@@ -143,7 +143,7 @@
       }
   
       .box1 {
-        width: 45%; /* Adjust the width as necessary */
+        width: 45%; 
       }
   }
   
@@ -153,7 +153,7 @@
       }
   
       .box1 {
-        width: 80%; /* Adjust the width as necessary */
+        width: 80%; 
       }
   }
   
