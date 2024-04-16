@@ -493,8 +493,6 @@ def your_data():
     latest_transport = latest_entry[1] if latest_entry else None
     latest_kms = latest_entry[2] if latest_entry else None
 
-
-
     if latest_kms != None:
         if latest_kms <= 2:
             if latest_transport != 'Walk':
@@ -512,7 +510,10 @@ def your_data():
                 ferry = latest_kms * efco2['Ferry']['Not my choice']
                 saved = latest_co2 - ferry
                 saved = round(saved, 2)
-                message = f"You could have saved {saved} kg of CO2-eq by taking the ferry."
+                if saved >= 0:
+                    message = f"You could have saved {saved} kg of CO2-eq by taking the ferry."
+                else:
+                    message = "You made a good transportation choice!"
             else:
                 message = "You made a good transportation choiche!"
         elif 25 < latest_kms <= 50:
@@ -520,7 +521,10 @@ def your_data():
                 tram = latest_kms * efco2['Tram']['Not my choice']
                 saved = latest_co2 - tram
                 saved = round(saved, 2)
-                message = f"You could have saved {saved} kg of CO2-eq by taking the tram."
+                if saved >= 0:
+                    message = f"You could have saved {saved} kg of CO2-eq by taking the tram."
+                else:
+                    message = "You made a good transportation choice!"
             else:
                 message = "You made a good transportation choiche!"
         elif 50 < latest_kms <= 250:
@@ -528,7 +532,10 @@ def your_data():
                 long_distance_bus_coach = latest_kms * efco2['Long distance bus (Coach)']['Not my choice']
                 saved = latest_co2 - long_distance_bus_coach 
                 saved = round(saved, 2)
-                message = f"You could have saved {saved} kg of CO2-eq by taking the long distance bus (Coach)."
+                if saved >= 0:
+                    message = f"You could have saved {saved} kg of CO2-eq by taking the long distance bus (Coach)."
+                else:
+                    message = "You made a good transportation choice!"
             else:
                 message = "You made a good transportation choiche!"
         elif 250 < latest_kms:
@@ -536,7 +543,10 @@ def your_data():
                 train = latest_kms * efco2['Train']['Not my choice']
                 saved = latest_co2 - train
                 saved = round(saved, 2)
-                message = f"You could have saved {saved} kg of CO2-eq by taking the train."
+                if saved >= 0:
+                    message = f"You could have saved {saved} kg of CO2-eq by taking the train."
+                else:
+                    message = "You made a good transportation choice!"               
             else:
                 message = "You made a good transportation choiche!"
         else:
@@ -549,8 +559,8 @@ def your_data():
     #ordningern på fordonen har skillnad i your_data.html - gör rätt ordning
         
     # Error hvis man får negativ saved
-    if saved<=0:
-        message = "You made a good transportation choice!"
+    #if saved<=0:
+     #   message = "You made a good transportation choice!"
 
     return render_template('carbon_app/your_data.html', title='your_data', entries=entries,
         emissions_by_transport_python_dic=emissions_by_transport,     
