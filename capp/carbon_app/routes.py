@@ -502,7 +502,7 @@ def your_data():
             saved = round(saved, 2)
             message = f"You could have saved {saved} Kg of CO2-eq by taking the ferry."
         else:
-            message = "You made a good transportation choiche!"
+            message = "You made a good transportation choice!"
     elif 25 < latest_kms <= 50:
         if latest_transport != 'Tram':
             tram = latest_kms * efco2['Tram']['Not my choice']
@@ -510,7 +510,7 @@ def your_data():
             saved = round(saved, 2)
             message = f"You could have saved {saved} Kg of CO2-eq by taking the tram."
         else:
-            message = "You made a good transportation choiche!"
+            message = "You made a good transportation choice!"
     elif 50 < latest_kms <= 250:
         if latest_transport != 'Long distance bus (Coach)':
             long_distance_bus_coach = latest_kms * efco2['Long distance bus (Coach)']['Not my choice']
@@ -518,7 +518,7 @@ def your_data():
             saved = round(saved, 2)
             message = f"You could have saved {saved} Kg of CO2-eq by taking the long distance bus (Coach)."
         else:
-            message = "You made a good transportation choiche!"
+            message = "You made a good transportation choice!"
     elif 250 < latest_kms:
         if latest_transport != 'Train':
             train = latest_kms * efco2['Train']['Not my choice']
@@ -526,14 +526,18 @@ def your_data():
             saved = round(saved, 2)
             message = f"You could have saved {saved} Kg of CO2-eq by taking the train."
         else:
-            message = "You made a good transportation choiche!"
+            message = "You made a good transportation choice!"
     else:
-        message = "You made a good transportation choiche!"
+        message = "You made a good transportation choice!"
     #error handling, över 1000 km med tåg = error 
         #add print(you made a good choiche) instead of None
     #Add the other transport modes to the graphs
         #ta bort saker från databasen 
     #ordningern på fordonen har skillnad i your_data.html - gör rätt ordning
+        
+    # Error hvis man får negativ saved
+    if saved<=0:
+        message = "You made a good transportation choice!"
 
     return render_template('carbon_app/your_data.html', title='your_data', entries=entries,
         emissions_by_transport_python_dic=emissions_by_transport,     
