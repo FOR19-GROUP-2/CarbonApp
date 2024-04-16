@@ -124,7 +124,21 @@
                     {% endif %}
                 </div>
             </div>
+            {% if current_user.is_authenticated %}   
             <div class="dropdown_menu">
+                <li><a href="{{ url_for('home.home_home') }}">Home</a></li>
+                <li><a href="{{ url_for('about_us.about_us_home') }}">About us</a></li>
+                <li><a href="{{ url_for('contact.contact_home') }}">Contact</a></li>
+                <li><a href="{{ url_for('methodology.methodology_home') }}">Methodology</a></li>
+                <li class="auth-links-dropdown">
+                  <a href="{{ url_for('users.logout') }}" class="auth-link">Logout</a>
+                </li>
+                <li> 
+                  <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="action_btn navbar_actionbtn">Try Our App</a>
+                </li>
+              </div>
+              {% else %}
+              <div class="dropdown_menu">
                 <li><a href="{{ url_for('home.home_home') }}">Home</a></li>
                 <li><a href="{{ url_for('about_us.about_us_home') }}">About us</a></li>
                 <li><a href="{{ url_for('contact.contact_home') }}">Contact</a></li>
@@ -137,6 +151,7 @@
                   <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="action_btn navbar_actionbtn">Try Our App</a>
                 </li>
               </div>
+              {% endif %}
         </section>
 
         <script>
