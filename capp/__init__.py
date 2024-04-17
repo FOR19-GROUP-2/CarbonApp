@@ -7,7 +7,7 @@ import os
 application = Flask(__name__)
 
 application.config['SECRET_KEY'] = '3oueqkfdfas8ruewqndr8ewrewrouewrere44554'
-
+DBVAR = 'postgresql://postgres:Skole123@awseb-e-gmyspkjtws-stack-awsebrdsdatabase-jewa73n7sewq.czy4aiswgvkx.eu-north-1.rds.amazonaws.com:5432//ebdb'
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
 application.config['SQLALCHEMY_BINDS'] ={'transport': 'sqlite:///transport.db'}
 
