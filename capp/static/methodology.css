@@ -5,7 +5,7 @@
 
 /* Title / Buttons and Introduction*/
 
-.our-methodology {
+.our-methodology .methodology-container{
     background: #fff; 
     background-size: cover;
     color: #3F7E44; 
@@ -14,13 +14,6 @@
     align-items: start;
     justify-content: center;
 }
-.methodology-container {
-max-width: 1200px; /
-margin: 0 auto; 
-padding: 50px 0 50px 260px;
-text-align: center;
-}
-
 .wave{
     margin: -1px;
     }
