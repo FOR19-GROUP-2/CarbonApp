@@ -111,24 +111,19 @@ h4 {
   padding: 0px 0px;
   margin: 0px 0px;
 }
-.btn_carbon_app_new_entry_main {
-  padding: 10px 10px;
-  margin: 10px 10px 10px 10px;
+.box_entry .btn_carbon_app_new_entry_main {
+  background-color: #56C02B;
   color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 18px;
-  background-color:  #56C02B;
-  border-color: #000;
-  width: 180px;
-  height: 40px;
-  text-align: center;
-  line-height: 20px;
+  display: block; 
+  text-decoration: none; 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  text-align: center; 
+  width: 200px; 
 }
-.btn_carbon_app_new_entry_main:hover {
-  color: #fff;
+.box_entry .btn_carbon_app_new_entry_main:hover {
   background-color: #009EDB;
-  text-decoration: none;
+  color: #fff;
 }
 /*Container new_entry */
 .new_entry {
