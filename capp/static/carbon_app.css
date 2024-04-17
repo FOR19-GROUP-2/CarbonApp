@@ -111,7 +111,7 @@ h4 {
   padding: 0px 0px;
   margin: 0px 0px;
 }
-.box_entry .btn_carbon_app_new_entry_main {
+.box_entry .btn_carbon_app_new_entry_main_your_data {
   background-color: #56C02B;
   color: #fff;
   display: block; 
@@ -121,9 +121,30 @@ h4 {
   text-align: center; 
   width: 200px; 
 }
-.box_entry .btn_carbon_app_new_entry_main:hover {
+.box_entry .btn_carbon_app_new_entry_main_your_data:hover {
   background-color: #009EDB;
   color: #fff;
+}
+
+.btn_carbon_app_new_entry_main {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color:  #56C02B;
+  border-color: #000;
+  width: 180px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.btn_carbon_app_new_entry_main:hover {
+  background-color: #009EDB;
+  color: #fff;
+  text-decoration: none;
 }
 /*Container new_entry */
 .new_entry {
