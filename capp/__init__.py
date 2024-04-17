@@ -6,12 +6,12 @@ import os
 
 application = Flask(__name__)
 
-#application.config['SECRET_KEY'] = '3oueqkfdfas8ruewqndr8ewrewrouewrere44554'
+application.config['SECRET_KEY'] = '3oueqkfdfas8ruewqndr8ewrewrouewrere44554'
 #DBVAR = 'postgresql://postgres:Skole123@awseb-e-pkphjnmpjc-stack-awsebrdsdatabase-hjmk2avjfod8.czy4aiswgvkx.eu-north-1.rds.amazonaws.com:5432//ebdb'
 application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
 application.config['SQLALCHEMY_BINDS'] ={'transport': 'sqlite:///transport.db'}
 
-application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
+#application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
 DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
 #application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 #application.config['SQLALCHEMY_BINDS'] ={'transport': DBVAR}
